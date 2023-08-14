@@ -13,7 +13,7 @@ const authMiddleware=async(req,res,next)=>{
                 const decodeToken=jwt.verify(token, process.env.token)
                 const {userID}=decodeToken
                 // console.log(userID)
-                req.body=userID
+                req.body.userID=userID
         
                 next()
             }
